@@ -1,0 +1,236 @@
+body {
+  margin: 0;
+  font-family: 'Baloo 2', cursive, Arial, sans-serif;
+  background: #f7fafc;
+  color: #222;
+}
+
+.hero {
+  background: linear-gradient(120deg, #c2ffd8 0%, #f7e6ff 100%);
+  padding: 3rem 1rem 2rem 1rem;
+  text-align: center;
+}
+
+.hero-img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  border: 6px solid #fff;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin: 0.25em 0 0.3em 0;
+  color: #2b886b;
+  letter-spacing: 1px;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 1.2em;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7em;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.signup-form input[type="email"] {
+  padding: 0.8em;
+  border-radius: 2em;
+  border: 1px solid #c4f0e6;
+  font-size: 1em;
+  width: 100%;
+  max-width: 260px;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.signup-form input[type="email"]:focus {
+  border: 1.5px solid #2b886b;
+}
+
+.signup-form button {
+  background: linear-gradient(90deg, #2b886b, #7f6cff);
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 2em;
+  padding: 0.8em 2.2em;
+  font-size: 1.1em;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(44, 136, 107, 0.07);
+  transition: background 0.2s, transform 0.1s;
+}
+
+.signup-form button:hover {
+  background: linear-gradient(90deg, #7f6cff, #2b886b);
+  transform: translateY(-2px) scale(1.03);
+}
+
+.form-message {
+  display: block;
+  font-size: 0.95em;
+  color: #ff4f4f;
+  margin-top: 0.5em;
+  min-height: 1.2em;
+}
+
+.benefits {
+  background: #fff;
+  padding: 2.5em 1em 2em 1em;
+  text-align: center;
+}
+
+.benefits h2 {
+  color: #7f6cff;
+  margin-bottom: 1.5em;
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+.benefit-list {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  flex-wrap: wrap;
+}
+
+.benefit-item {
+  background: #f7e6ff;
+  border-radius: 1.5em;
+  padding: 1.5em 1em;
+  width: 230px;
+  min-width: 180px;
+  box-shadow: 0 2px 8px rgba(127,108,255,0.05);
+  margin-bottom: 1em;
+}
+
+.benefit-icon {
+  font-size: 2.1em;
+  margin-bottom: 0.5em;
+  display: block;
+}
+
+.benefit-item h3 {
+  margin-top: 0.2em;
+  margin-bottom: 0.4em;
+  color: #2b886b;
+  font-size: 1.25rem;
+}
+
+.how-it-works {
+  background: linear-gradient(90deg, #f7e6ff 0%, #c2ffd8 100%);
+  padding: 2.5em 1em;
+  text-align: center;
+}
+
+.how-it-works h2 {
+  color: #2b886b;
+  margin-bottom: 1.2em;
+  font-size: 2rem;
+}
+
+.steps {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  flex-wrap: wrap;
+  margin-bottom: 1.8em;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 120px;
+  margin-bottom: 1em;
+}
+
+.step-circle {
+  background: #7f6cff;
+  color: #fff;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  margin-bottom: 0.6em;
+  box-shadow: 0 2px 8px rgba(127,108,255,0.12);
+}
+
+.cta-btn {
+  display: inline-block;
+  background: #2b886b;
+  color: #fff;
+  padding: 0.9em 2.2em;
+  border-radius: 2em;
+  font-size: 1.1em;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.19s, transform 0.1s;
+  box-shadow: 0 2px 9px rgba(44, 136, 107, 0.10);
+}
+
+.cta-btn:hover {
+  background: #7f6cff;
+  transform: scale(1.04);
+}
+
+footer {
+  background: #2b886b;
+  color: #fff;
+  padding: 1.3em 1em;
+  font-size: 1em;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 760px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.footer-content > div {
+  margin: 0.3em 0;
+}
+
+.footer-content a {
+  color: #fff;
+  text-decoration: underline;
+  margin-left: 0.6em;
+}
+
+.social-icons a {
+  font-size: 1.2em;
+  margin-left: 0.3em;
+  text-decoration: none;
+}
+
+@media (max-width: 650px) {
+  .benefit-list, .steps, .footer-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.3em;
+  }
+  .benefit-item, .step {
+    width: 100%;
+    max-width: 260px;
+  }
+  .footer-content {
+    font-size: 0.98em;
+  }
+}
