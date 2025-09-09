@@ -44,6 +44,92 @@
     </div>
   </section>
 
+  <!-- Pet Profile Section -->
+  <section class="pet-profile">
+    <h2>Create Your Pet Profile</h2>
+    <p class="section-subtitle">Tell us about your furry friend to connect with the right community!</p>
+    
+    <div class="profile-container">
+      <!-- Existing Pet Profiles Display -->
+      <div class="existing-profiles" id="existingProfiles">
+        <h3>Your Pet Profiles</h3>
+        <div class="profiles-list" id="profilesList">
+          <p class="no-profiles" id="noProfiles">No pet profiles yet. Create your first one below!</p>
+        </div>
+      </div>
+
+      <!-- Pet Profile Form -->
+      <div class="profile-form-container">
+        <h3>Add New Pet Profile</h3>
+        <form class="pet-profile-form" id="petProfileForm">
+          <div class="form-group">
+            <label for="petName">Pet Name *</label>
+            <input type="text" id="petName" name="petName" required placeholder="What's your pet's name?">
+          </div>
+          
+          <div class="form-group">
+            <label for="petType">Pet Type *</label>
+            <select id="petType" name="petType" required>
+              <option value="">Select pet type</option>
+              <option value="dog">🐶 Dog</option>
+              <option value="cat">🐱 Cat</option>
+              <option value="bird">🐦 Bird</option>
+              <option value="rabbit">🐰 Rabbit</option>
+              <option value="hamster">🐹 Hamster</option>
+              <option value="fish">🐠 Fish</option>
+              <option value="reptile">🦎 Reptile</option>
+              <option value="other">🐾 Other</option>
+            </select>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="petBreed">Breed</label>
+              <input type="text" id="petBreed" name="petBreed" placeholder="e.g., Golden Retriever">
+            </div>
+            
+            <div class="form-group">
+              <label for="petAge">Age</label>
+              <input type="text" id="petAge" name="petAge" placeholder="e.g., 2 years, 6 months">
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="petDescription">About Your Pet</label>
+            <textarea id="petDescription" name="petDescription" rows="3" placeholder="Tell us about your pet's personality, likes, and any special notes..."></textarea>
+          </div>
+          
+          <div class="form-group">
+            <label for="petTemperament">Temperament</label>
+            <div class="checkbox-group">
+              <label class="checkbox-item">
+                <input type="checkbox" name="temperament" value="friendly"> Friendly
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" name="temperament" value="energetic"> Energetic
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" name="temperament" value="calm"> Calm
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" name="temperament" value="playful"> Playful
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" name="temperament" value="social"> Social
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" name="temperament" value="shy"> Shy
+              </label>
+            </div>
+          </div>
+          
+          <button type="submit" class="submit-btn">Create Pet Profile 🐾</button>
+          <span class="form-message" id="petFormMessage"></span>
+        </form>
+      </div>
+    </div>
+  </section>
+
   <!-- How It Works Section -->
   <section class="how-it-works">
     <h2>How It Works</h2>
@@ -54,14 +140,14 @@
       </div>
       <div class="step">
         <div class="step-circle">2</div>
-        <p>Get notified when we launch<br>📬</p>
+        <p>Create your pet profile<br>📝</p>
       </div>
       <div class="step">
         <div class="step-circle">3</div>
         <p>Join meetups & discover new places<br>🏞️</p>
       </div>
     </div>
-    <a href="#signupForm" class="cta-btn">Get Started</a>
+    <a href="#petProfileForm" class="cta-btn">Create Pet Profile</a>
   </section>
 
   <!-- Footer -->
