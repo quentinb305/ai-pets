@@ -128,6 +128,56 @@
     <a href="#signupForm" class="cta-btn">Get Started</a>
   </section>
 
+  <!-- Feedback Section -->
+  <section class="feedback-section">
+    <h2>Help Us Improve</h2>
+    <p class="section-subtitle">Found an issue or have a suggestion? We'd love to hear from you!</p>
+    
+    <div class="feedback-container">
+      <form class="feedback-form" id="feedbackForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="feedbackType">Type of Feedback</label>
+            <select id="feedbackType" name="feedbackType" required>
+              <option value="">Select type...</option>
+              <option value="bug">🐛 Bug Report</option>
+              <option value="feature">💡 Feature Request</option>
+              <option value="improvement">⚡ Improvement Suggestion</option>
+              <option value="question">❓ Question</option>
+              <option value="other">💬 Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="feedbackEmail">Your Email (optional)</label>
+            <input type="email" id="feedbackEmail" name="feedbackEmail" placeholder="your@email.com">
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="feedbackTitle">Title *</label>
+          <input type="text" id="feedbackTitle" name="feedbackTitle" placeholder="Brief description of your feedback" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="feedbackDetails">Details *</label>
+          <textarea id="feedbackDetails" name="feedbackDetails" rows="4" placeholder="Please provide details about your feedback, bug report, or suggestion..." required></textarea>
+        </div>
+        
+        <button type="submit" class="submit-feedback-btn">Submit Feedback</button>
+        <span class="feedback-message" id="feedbackMessage"></span>
+      </form>
+      
+      <div class="feedback-display" id="feedbackDisplay" style="display: none;">
+        <div class="feedback-success">
+          <h3>Thank you for your feedback! 🙏</h3>
+          <p>We appreciate you taking the time to help us improve. Your feedback has been recorded and we'll review it soon.</p>
+          <div class="submitted-feedback" id="submittedFeedback"></div>
+          <button class="new-feedback-btn" id="newFeedbackBtn">Submit Another Feedback</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer>
     <div class="footer-content">
