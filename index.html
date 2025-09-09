@@ -44,13 +44,77 @@
     </div>
   </section>
 
+  <!-- Pet Profile Section -->
+  <section class="pet-profile-section">
+    <h2>Create Your Pet's Profile</h2>
+    <p class="section-subtitle">Help other pet owners get to know your furry friend!</p>
+    
+    <div class="profile-container">
+      <form class="pet-profile-form" id="petProfileForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="petName">Pet Name *</label>
+            <input type="text" id="petName" name="petName" required>
+          </div>
+          <div class="form-group">
+            <label for="petBreed">Breed</label>
+            <input type="text" id="petBreed" name="petBreed" placeholder="e.g., Golden Retriever">
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label for="petAge">Age</label>
+            <input type="text" id="petAge" name="petAge" placeholder="e.g., 3 years">
+          </div>
+          <div class="form-group">
+            <label for="petType">Pet Type</label>
+            <select id="petType" name="petType">
+              <option value="dog">🐶 Dog</option>
+              <option value="cat">🐱 Cat</option>
+              <option value="bird">🐦 Bird</option>
+              <option value="rabbit">🐰 Rabbit</option>
+              <option value="other">🐾 Other</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="petPersonality">Personality & Interests</label>
+          <textarea id="petPersonality" name="petPersonality" placeholder="Tell us about your pet's personality, favorite activities, and what makes them special!" rows="3"></textarea>
+        </div>
+        
+        <button type="submit" class="create-profile-btn">Create Pet Profile</button>
+      </form>
+      
+      <div class="pet-profile-display" id="petProfileDisplay" style="display: none;">
+        <div class="profile-card">
+          <div class="profile-header">
+            <div class="pet-avatar" id="petAvatar">🐾</div>
+            <div class="pet-info">
+              <h3 id="displayPetName"></h3>
+              <p id="displayPetDetails"></p>
+            </div>
+          </div>
+          <div class="profile-body">
+            <p id="displayPetPersonality"></p>
+          </div>
+          <div class="profile-actions">
+            <button class="edit-profile-btn" id="editProfileBtn">Edit Profile</button>
+            <button class="share-profile-btn">Share Profile</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- How It Works Section -->
   <section class="how-it-works">
     <h2>How It Works</h2>
     <div class="steps">
       <div class="step">
         <div class="step-circle">1</div>
-        <p>Sign up for early access<br>🐾</p>
+        <p>Create your pet's profile<br>🐾</p>
       </div>
       <div class="step">
         <div class="step-circle">2</div>
