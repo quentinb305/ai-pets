@@ -44,6 +44,67 @@
     </div>
   </section>
 
+  <!-- Pet Profiles Section -->
+  <section class="pet-profiles">
+    <h2>Create Your Pet Profile</h2>
+    <p class="section-subtitle">Share your furry friend's info to help other pet owners connect with you!</p>
+    
+    <div class="pet-profile-container">
+      <!-- Pet Profile Form -->
+      <div class="pet-form-section">
+        <form class="pet-form" id="petForm">
+          <div class="form-group">
+            <label for="petName">Pet Name</label>
+            <input type="text" id="petName" name="petName" placeholder="Enter your pet's name" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="petType">Pet Type</label>
+            <select id="petType" name="petType" required>
+              <option value="">Select pet type</option>
+              <option value="dog">🐶 Dog</option>
+              <option value="cat">🐱 Cat</option>
+              <option value="bird">🐦 Bird</option>
+              <option value="rabbit">🐰 Rabbit</option>
+              <option value="other">🐾 Other</option>
+            </select>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="petBreed">Breed</label>
+              <input type="text" id="petBreed" name="petBreed" placeholder="e.g., Golden Retriever">
+            </div>
+            
+            <div class="form-group">
+              <label for="petAge">Age</label>
+              <input type="text" id="petAge" name="petAge" placeholder="e.g., 3 years">
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="petDescription">Description</label>
+            <textarea id="petDescription" name="petDescription" placeholder="Tell us about your pet's personality, favorite activities, etc." rows="3"></textarea>
+          </div>
+          
+          <button type="submit" class="pet-form-btn">Add Pet Profile</button>
+          <span class="pet-form-message" id="petFormMessage"></span>
+        </form>
+      </div>
+      
+      <!-- Pet Profiles Display -->
+      <div class="pet-profiles-display">
+        <h3>Your Pet Profiles</h3>
+        <div id="petProfilesList" class="pet-profiles-list">
+          <div class="no-pets-message">
+            <span class="pet-icon">🐾</span>
+            <p>No pet profiles yet. Create your first one!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- How It Works Section -->
   <section class="how-it-works">
     <h2>How It Works</h2>
