@@ -8,6 +8,18 @@
   <link href="https://fonts.googleapis.com/css?family=Baloo+2:400,700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- Navigation Toggle -->
+  <nav class="user-type-nav">
+    <div class="nav-container">
+      <div class="nav-toggle">
+        <button class="nav-btn active" id="petOwnerBtn">🐾 Pet Owner</button>
+        <button class="nav-btn" id="venueOwnerBtn">🏢 Venue Owner</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Pet Owner Content -->
+  <div id="petOwnerContent">
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
@@ -127,6 +139,189 @@
     </div>
     <a href="#signupForm" class="cta-btn">Get Started</a>
   </section>
+  </div>
+
+  <!-- Venue Owner Content -->
+  <div id="venueOwnerContent" style="display: none;">
+    <!-- Venue Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <img src="https://images.unsplash.com/photo-1555685812-4b943f1cb0eb?auto=format&fit=crop&w=800&q=80" alt="Pet-friendly cafe" class="hero-img">
+        <h1>🏢 Welcome Venue Owners!</h1>
+        <p class="subtitle">Join our network of pet-friendly businesses and connect with pet-loving customers in your area.</p>
+        <form class="signup-form" id="venueSignupForm">
+          <input type="email" id="venueEmail" placeholder="Enter your business email" required>
+          <button type="submit">Get Started</button>
+          <span class="form-message" id="venueFormMessage"></span>
+        </form>
+      </div>
+    </section>
+
+    <!-- Venue Benefits Section -->
+    <section class="benefits">
+      <h2>Why Partner With Us?</h2>
+      <div class="benefit-list">
+        <div class="benefit-item">
+          <span class="benefit-icon">👥</span>
+          <h3>Reach Pet Owners</h3>
+          <p>Connect with a growing community of pet owners looking for pet-friendly venues.</p>
+        </div>
+        <div class="benefit-item">
+          <span class="benefit-icon">📊</span>
+          <h3>Track Performance</h3>
+          <p>Get insights on visitor engagement and event attendance at your venue.</p>
+        </div>
+        <div class="benefit-item">
+          <span class="benefit-icon">🎯</span>
+          <h3>Host Events</h3>
+          <p>Organize and promote pet-friendly events to attract more customers.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Venue Registration Section -->
+    <section class="pet-profile-section">
+      <h2>Register Your Venue</h2>
+      <p class="section-subtitle">Tell us about your pet-friendly business!</p>
+      
+      <div class="profile-container">
+        <form class="pet-profile-form" id="venueProfileForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="venueName">Business Name *</label>
+              <input type="text" id="venueName" name="venueName" required>
+            </div>
+            <div class="form-group">
+              <label for="venueType">Business Type</label>
+              <select id="venueType" name="venueType">
+                <option value="cafe">☕ Cafe/Restaurant</option>
+                <option value="park">🌳 Park</option>
+                <option value="store">🛍️ Pet Store</option>
+                <option value="hotel">🏨 Hotel</option>
+                <option value="grooming">✂️ Grooming</option>
+                <option value="vet">🏥 Veterinary</option>
+                <option value="other">🏢 Other</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="venueAddress">Address</label>
+              <input type="text" id="venueAddress" name="venueAddress" placeholder="123 Main St, City, State">
+            </div>
+            <div class="form-group">
+              <label for="venuePhone">Phone</label>
+              <input type="tel" id="venuePhone" name="venuePhone" placeholder="(555) 123-4567">
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="venueDescription">Description & Pet Policies</label>
+            <textarea id="venueDescription" name="venueDescription" placeholder="Tell us about your venue, pet-friendly amenities, and any pet policies..." rows="3"></textarea>
+          </div>
+          
+          <button type="submit" class="create-profile-btn">Register Venue</button>
+        </form>
+        
+        <div class="pet-profile-display" id="venueProfileDisplay" style="display: none;">
+          <div class="profile-card">
+            <div class="profile-header">
+              <div class="pet-avatar" id="venueAvatar">🏢</div>
+              <div class="pet-info">
+                <h3 id="displayVenueName"></h3>
+                <p id="displayVenueDetails"></p>
+              </div>
+            </div>
+            <div class="profile-body">
+              <p id="displayVenueDescription"></p>
+            </div>
+            <div class="profile-actions">
+              <button class="edit-profile-btn" id="editVenueBtn">Edit Venue</button>
+              <button class="venue-dashboard-btn" id="venueDashboardBtn">View Dashboard</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Venue Dashboard Section -->
+    <section class="venue-dashboard" id="venueDashboard" style="display: none;">
+      <div class="dashboard-container">
+        <h2>Venue Dashboard</h2>
+        <div class="dashboard-header">
+          <h3 id="dashboardVenueName"></h3>
+          <button class="edit-profile-btn" id="backToProfileBtn">Back to Profile</button>
+        </div>
+        
+        <div class="dashboard-stats">
+          <div class="stat-card">
+            <div class="stat-icon">👁️</div>
+            <div class="stat-content">
+              <h4>Profile Views</h4>
+              <p class="stat-number" id="profileViews">127</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">🐾</div>
+            <div class="stat-content">
+              <h4>Pet Visitors</h4>
+              <p class="stat-number" id="petVisitors">43</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">📅</div>
+            <div class="stat-content">
+              <h4>Events Hosted</h4>
+              <p class="stat-number" id="eventsHosted">8</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="dashboard-section">
+          <h4>Upcoming Events</h4>
+          <div class="events-list" id="eventsList">
+            <div class="event-item">
+              <div class="event-info">
+                <h5>Puppy Playdate</h5>
+                <p>Saturday, 2 PM - Small dogs welcome</p>
+              </div>
+              <button class="event-action-btn">Edit</button>
+            </div>
+            <div class="event-item">
+              <div class="event-info">
+                <h5>Cat Cafe Hour</h5>
+                <p>Sunday, 10 AM - Quiet time for cats</p>
+              </div>
+              <button class="event-action-btn">Edit</button>
+            </div>
+          </div>
+          <button class="add-event-btn" id="addEventBtn">+ Add New Event</button>
+        </div>
+
+        <div class="dashboard-section">
+          <h4>Recent Activity</h4>
+          <div class="activity-list">
+            <div class="activity-item">
+              <span class="activity-icon">🐕</span>
+              <span>Max (Golden Retriever) checked in</span>
+              <span class="activity-time">2 hours ago</span>
+            </div>
+            <div class="activity-item">
+              <span class="activity-icon">📝</span>
+              <span>New review: "Great place for pets!"</span>
+              <span class="activity-time">1 day ago</span>
+            </div>
+            <div class="activity-item">
+              <span class="activity-icon">📅</span>
+              <span>Event "Puppy Playdate" was created</span>
+              <span class="activity-time">3 days ago</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
 
   <!-- Footer -->
   <footer>
