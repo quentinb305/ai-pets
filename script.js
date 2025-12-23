@@ -118,4 +118,81 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     });
+
+    // Handle feedback form
+    const feedbackForm = document.getElementById('feedbackForm');
+    const feedbackDisplay = document.getElementById('feedbackDisplay');
+    const feedbackMessage = document.getElementById('feedbackMessage');
+    const newFeedbackBtn = document.getElementById('newFeedbackBtn');
+
+    if (feedbackForm) {
+        feedbackForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const feedbackData = {
+                type: document.getElementById('feedbackType').value,
+                email: document.getElementById('feedbackEmail').value,
+                title: document.getElementById('feedbackTitle').value,
+                details: document.getElementById('feedbackDetails').value,
+                timestamp: new Date().toISOString()
+            };
+
+            if (feedbackData.type && feedbackData.title && feedbackData.details) {
+                // Save feedback to localStorage
+                saveFeedback(feedbackData);
+                
+                // Display success message
+                displayFeedbackSuccess(feedbackData);
+                feedbackForm.style.display = 'none';
+                feedbackDisplay.style.display = 'block';
+                
+                // Clear form
+                feedbackForm.reset();
+                feedbackMessage.textContent = '';
+            } else {
+                feedbackMessage.textContent = 'Please fill in all required fields.';
+                feedbackMessage.style.color = '#ff4f4f';
+            }
+        });
+    }
+
+    if (newFeedbackBtn) {
+        newFeedbackBtn.addEventListener('click', function() {
+            feedbackForm.style.display = 'block';
+            feedbackDisplay.style.display = 'none';
+        });
+    }
+
+    function saveFeedback(feedbackData) {
+        // Get existing feedback from localStorage
+        let existingFeedback = localStorage.getItem('userFeedback');
+        let feedbackList = existingFeedback ? JSON.parse(existingFeedback) : [];
+        
+        // Add new feedback
+        feedbackList.push(feedbackData);
+        
+        // Save back to localStorage
+        localStorage.setItem('userFeedback', JSON.stringify(feedbackList));
+    }
+
+    function displayFeedbackSuccess(feedbackData) {
+        const submittedFeedback = document.getElementById('submittedFeedback');
+        if (submittedFeedback) {
+            const typeLabels = {
+                'bug': '🐛 Bug Report',
+                'feature': '💡 Feature Request',
+                'improvement': '⚡ Improvement Suggestion',
+                'question': '❓ Question',
+                'other': '💬 Other'
+            };
+
+            submittedFeedback.innerHTML = `
+                <span class="feedback-type">${typeLabels[feedbackData.type] || feedbackData.type}</span>
+                <h4>${feedbackData.title}</h4>
+                <p><strong>Details:</strong> ${feedbackData.details}</p>
+                ${feedbackData.email ? `<p><strong>Contact:</strong> ${feedbackData.email}</p>` : ''}
+                <p><strong>Submitted:</strong> ${new Date(feedbackData.timestamp).toLocaleString()}</p>
+            `;
+        }
+    }
 });
