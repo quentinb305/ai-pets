@@ -46,10 +46,15 @@
 
   <!-- Pet Profile Section -->
   <section class="pet-profile-section">
-    <h2>Create Your Pet's Profile</h2>
-    <p class="section-subtitle">Help other pet owners get to know your furry friend!</p>
+    <h2>Create Your AI Pet Profile</h2>
+    <p class="section-subtitle">Generate a unique profile for your furry friend with AI assistance!</p>
     
     <div class="profile-container">
+      <div class="ai-generation-section">
+        <button type="button" class="generate-ai-profile-btn" id="generateAIProfile">✨ Generate AI Profile</button>
+        <p class="ai-hint">Let our AI create a complete profile, or fill out the form manually below</p>
+      </div>
+      
       <form class="pet-profile-form" id="petProfileForm">
         <div class="form-row">
           <div class="form-group">
@@ -79,6 +84,40 @@
           </div>
         </div>
         
+        <div class="appearance-section">
+          <h3>Appearance</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="petColor">Primary Color</label>
+              <select id="petColor" name="petColor">
+                <option value="">Select color...</option>
+                <option value="brown">🤎 Brown</option>
+                <option value="black">⚫ Black</option>
+                <option value="white">⚪ White</option>
+                <option value="golden">🟡 Golden</option>
+                <option value="gray">🔘 Gray</option>
+                <option value="orange">🟠 Orange</option>
+                <option value="mixed">🌈 Mixed</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="petSize">Size</label>
+              <select id="petSize" name="petSize">
+                <option value="">Select size...</option>
+                <option value="tiny">🐁 Tiny</option>
+                <option value="small">🐕‍🦺 Small</option>
+                <option value="medium">🐕 Medium</option>
+                <option value="large">🐕‍🦮 Large</option>
+                <option value="giant">🐺 Giant</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="petMarkings">Special Markings</label>
+            <input type="text" id="petMarkings" name="petMarkings" placeholder="e.g., white chest, black spots, floppy ears">
+          </div>
+        </div>
+        
         <div class="form-group">
           <label for="petPersonality">Personality & Interests</label>
           <textarea id="petPersonality" name="petPersonality" placeholder="Tell us about your pet's personality, favorite activities, and what makes them special!" rows="3"></textarea>
@@ -96,12 +135,20 @@
               <p id="displayPetDetails"></p>
             </div>
           </div>
+          <div class="appearance-display" id="appearanceDisplay">
+            <h4>Appearance</h4>
+            <div class="appearance-details">
+              <span id="displayAppearance"></span>
+            </div>
+          </div>
           <div class="profile-body">
+            <h4>Personality</h4>
             <p id="displayPetPersonality"></p>
           </div>
           <div class="profile-actions">
             <button class="edit-profile-btn" id="editProfileBtn">Edit Profile</button>
             <button class="share-profile-btn">Share Profile</button>
+            <button class="regenerate-profile-btn" id="regenerateProfileBtn">✨ Regenerate with AI</button>
           </div>
         </div>
       </div>
